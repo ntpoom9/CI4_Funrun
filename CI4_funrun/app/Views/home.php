@@ -22,6 +22,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="img/Funrun.png" />
     <!-- css header  -->
     <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/home.css">
 
     <title>Funrun</title>
 </head>
@@ -43,7 +44,7 @@
 
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="main_index">FUNRUN</a>
+            <a class="navbar-brand" href="home">FUNRUN</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -98,17 +99,25 @@
                     aria-label="Slide 3"></button>
             </div>
 
-            <div class="carousel-inner">
-
+            <div class="carousel-inner" style="height:570px;">
 
                 <div class="carousel-item active">
-                    <img src="/img/home.jpg" class="d-block w-100" alt="home">
+                    <video autoplay muted loop id="myVideo">
+                        <source src="img/run3.mp4" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
                 </div>
                 <div class="carousel-item">
-                    <img src="/img/home2.jpg" class="d-block w-100" alt="home2">
+                    <video autoplay muted loop id="myVideo">
+                        <source src="img/run2.mp4" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
                 </div>
                 <div class="carousel-item">
-                    <img src="/img/home3.jpg" class="d-block w-100" alt="home3">
+                    <video autoplay muted loop id="myVideo">
+                        <source src="img/run1.mp4" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
                 </div>
 
 

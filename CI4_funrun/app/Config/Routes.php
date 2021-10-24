@@ -37,7 +37,7 @@ $routes->get('/', 'Home::index');
 $routes->get('login','Login::index');
 $routes->get('/','Login::logout');
 // Register
-$routes->get('register','Register::index');
+// $routes->get('register','Register::index');
 
 // page_search
  $routes->get('search_page_index', 'Search::search');
@@ -57,8 +57,8 @@ $routes->get('/index_user', 'Home::index_user');
 $routes->get('/index_admin', 'Home::index_admin');
 
 // register 
-
-$routes->get('/register_run', 'Register_run::index');
+$routes->get('/register_run', 'Register::index');
+// $routes->post('/register_run', 'Register_run::add');
 
 
 /*

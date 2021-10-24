@@ -1,25 +1,26 @@
 <?php  namespace App\Controllers;
-use App\Models\UserModel;
+
 use CodeIgniter\Controller;
+use App\Models\MemberModel;
 
 class Profile extends Controller{
     public function index() {
        
-        $UserModel = new UserModel();
+        $MemberModel = new MemberModel();
 
         // โชว์ All จาก id 
-        $data['users'] = $UserModel->orderBy('stu_id', 'DESC')->findAll();
+        $data['member'] = $MemberModel->orderBy('id_card', 'DESC')->findAll();
 
-        // $data['users'] = $UserModel->fetch_data();
+        // $data['member'] = $MemberModel->fetch_data();
         return view('profile', $data);
     }
-    public function show_edit($stu_id=null) {
-        //    echo $stu_id;
+    public function show_edit($id_card=null) {
+        //    echo $id_card;
 
             $session = session();
-            $UserModel = new UserModel();
-            // $data['users'] = $UserModel->orderBy('stu_id', $stu_id)->findAll();
-            $data['users'] = $UserModel->where('stu_id', $stu_id)->first();
+            $MemberModel = new MemberModel();
+            // $data['member'] = $MemberModel->orderBy('id_card', $id_card)->findAll();
+            $data['member'] = $MemberModel->where('id_card', $id_card)->first();
     
     
             return view('edit_profile', $data);
@@ -28,8 +29,8 @@ class Profile extends Controller{
         public function update()
         {
             $session = session();
-            $id = $this->request->getVar('stu_id');
-            $UserModel = new UserModel();
+            $id = $this->request->getVar('id_card');
+            $MemberModel = new MemberModel();
             $data = [
                 // 'd_m_y_birth' => $this->request->getVar('d_m_y_birth'),
                 'province_birth' => $this->request->getVar('province_birth'),
@@ -45,7 +46,7 @@ class Profile extends Controller{
                 'status_work'=> $this->request->getVar('status_work'),
                 'company_name'=> $this->request->getVar('company_name'),
             ];
-            $UserModel->update($id,$data);
+            $MemberModel->update($id,$data);
             $session->set($data);
             return redirect()->to('profile');
             

@@ -74,7 +74,7 @@
                     </li>
                 </ul>
 
-                <a class="nav-link" href="/register_run" id="navbarRight">ลงทะเบียนงานวิ่ง</a>
+                <a class="nav-link" href="/register" id="navbarRight">ลงทะเบียนงานวิ่ง</a>
                 <a class="nav-link" href="/login" id="navbarRight">เข้าสู่ระบบ</a>
 
             </div>
