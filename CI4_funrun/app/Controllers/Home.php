@@ -9,4 +9,15 @@ class Home extends BaseController
         return view('home');
 
     }
+
+    public function index_admin()
+    {
+        return view('index_admin');
+
+    }
+    public function index_user()
+    {
+        return view('index_user');
+
+    }
 }

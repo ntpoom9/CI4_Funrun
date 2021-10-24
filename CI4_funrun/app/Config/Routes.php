@@ -50,6 +50,16 @@ $routes->get('profile', 'Profile::index');
 // udate profile
  $routes->put('update/(:num)', 'Profile::update/$1');
  
+ 
+// funrun 
+// index user & admin
+$routes->get('/index_user', 'Home::index_user');
+$routes->get('/index_admin', 'Home::index_admin');
+
+// register 
+
+$routes->get('/register_run', 'Register_run::index');
+
 
 /*
  * --------------------------------------------------------------------

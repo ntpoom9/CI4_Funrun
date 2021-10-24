@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import 'https://fonts.googleapis.com/css?family=Prompt';
+
+body{
+    font-family: 'Prompt';
+}
+
+nav{
+    /* background-color: #ffffff; */
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(13, 11, 137, 1) 64%, rgba(0, 45, 224, 1) 100%);
+    height: 4rem;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    
+}
+
+.navbar-toggler{
+    /* background-color: #ffffff; */
+    color: #ffffff;
+    width: auto;
+}
+
+.navbar-toggler-icon{
+    color: #ffffff;
+    text-align: center;
+    padding-top: auto;
+    padding-bottom: auto;
+    justify-content: center;
+}
+
+.navbar-brand{
+    color: #ffffff;
+}
+.navbar-brand:hover{
+    color: #ffffff;
+}
+
+
+#navbarDropdown{
+    color: #ffffff;
+    width: 160px;
+    border-radius: 5px;
+}
+#navbarDropdown:hover{
+    color: #000000;
+    background-color: #ffae00;
+}
+.nav-link:visited{
+    color: #ffffff;
+}
+
+#navbarRight{
+    color: #ffffff;
+    border-radius: 5px;
+}
+#navbarRight:hover{
+    color: #000000;
+    background-color: #ffae00;
+}
+a{
+    text-decoration: none;  
+}
+
+
+/* footer  */
+footer{
+    margin-top: 1rem;
+    color: #ffffff;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(13, 11, 137, 1) 64%, rgba(0, 45, 224, 1) 100%);
+}
+
+#footer_link{
+    color: #ffffff;
+}
