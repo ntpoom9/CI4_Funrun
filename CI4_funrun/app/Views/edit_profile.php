@@ -28,7 +28,7 @@ $session = session(); ?>
     <link rel="stylesheet" href="/css/edit_profile.css">
 
 
-    <title>ลงทะเบียนสมาชิก</title>
+    <title>แก้ไขข้อมูลผู้ใช้</title>
 </head>
 
 <body>

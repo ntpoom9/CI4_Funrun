@@ -23,7 +23,7 @@
     <!-- css header  -->
     <link rel="stylesheet" href="/css/header.css">
 
-    <title>Funrun Admin</title>
+    <title>ผู้ลงสมัครทั้งหมด</title>
 </head>
 
 <body>

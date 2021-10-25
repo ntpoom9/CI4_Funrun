@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="/css/login.css">
 
 
-    <title>ลงทะเบียนวิ่งมาราธอน</title>
+    <title>เข้าสู่ระบบ Funrun</title>
 </head>
 
 <body>

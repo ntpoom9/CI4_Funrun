@@ -28,7 +28,7 @@ $session = session(); ?>
     <link rel="stylesheet" href="/css/register_category.css">
 
 
-    <title>ลงทะเบียนสมาชิก</title>
+    <title>ลงสมัครกิจกรรม</title>
 </head>
 
 <body>

@@ -23,7 +23,7 @@
     <!-- css header  -->
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/category.css">
-    <title>Funrun วิ่งมาราธอน</title>
+    <title>ประเภทกิจกรรม</title>
 </head>
 
 <body>

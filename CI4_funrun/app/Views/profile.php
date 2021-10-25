@@ -30,7 +30,7 @@ $session = session(); ?>
     <link rel="stylesheet" href="/css/profile.css">
 
 
-    <title>ลงทะเบียนสมาชิก</title>
+    <title>โปรไฟล์</title>
 </head>
 
 <body>
