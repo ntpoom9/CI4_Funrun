@@ -22,7 +22,7 @@ $session = session(); ?>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <!-- icon tab  -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/Funrun.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="img/logo_tab_run.png" />
     <!-- css header  -->
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/edit_profile.css">
@@ -114,7 +114,8 @@ $session = session(); ?>
                 </div>
                 <div class="input-container ic2">
                     <label for="firstname">ชื่อ-นามสกุล</label>
-                    <input class="input" type="text" name="name" id="name" value="<?php echo $session->get('name'); ?>">
+                    <input class="input" type="text" name="name" id="name" value="<?php echo $session->get('name'); ?>"
+                        disabled>
                     <small id="error"><?php  if (isset($validation)) : ?>
                         <?php if($validation->hasError('name')): ?>
                         <?= $validation->getError('name'); ?>
@@ -122,7 +123,7 @@ $session = session(); ?>
                         <?php endif; ?></small>
                 </div>
                 <div class="input-container ic2">
-                    <label for="firstname">อายุ</label>
+                    <label for="firstname">อายุ <small style="color:red;"> *แก้ไขได้</small></label>
                     <input class="input" type="text" name="age" id="age" value="<?php echo $session->get('age'); ?>">
                     <small id="error"><?php  if (isset($validation)) : ?>
                         <?php if($validation->hasError('age')): ?>
@@ -131,9 +132,9 @@ $session = session(); ?>
                         <?php endif; ?></small>
                 </div>
                 <div class="input-container ic2">
-                    <label for="firstname">อีเมล</label>
+                    <label for="firstname">อีเมล </label>
                     <input class="input" type="text" name="email" id="email"
-                        value="<?php echo $session->get('email'); ?>">
+                        value="<?php echo $session->get('email'); ?>" disabled>
                     <small id="error"><?php  if (isset($validation)) : ?>
                         <?php if($validation->hasError('email')): ?>
                         <?= $validation->getError('email'); ?>

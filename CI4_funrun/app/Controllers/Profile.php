@@ -35,14 +35,14 @@ class Profile extends Controller{
             $id = $this->request->getVar('id_card');
             $data = [];
             $rules = [
-                'name' => [
-                    'rules' => 'required|alpha_space',
-                    'errors' => [
-                        'required' => '*ชื่อ-นามสกุล',
-                        'alpha_space' => 'ชื่อ-นามสกุล ต้องเป็นตัวอักษร',
-                        'is_unique' => 'ชื่อนี้ถูกใช้งานแล้ว',
-                    ],
-                ],
+                // 'name' => [
+                //     'rules' => 'required|alpha_space',
+                //     'errors' => [
+                //         'required' => '*ชื่อ-นามสกุล',
+                //         'alpha_space' => 'ชื่อ-นามสกุล ต้องเป็นตัวอักษร',
+                //         'is_unique' => 'ชื่อนี้ถูกใช้งานแล้ว',
+                //     ],
+                // ],
                 'age' => [
                     'rules' => 'required|numeric',
                     'errors' => [
@@ -50,22 +50,22 @@ class Profile extends Controller{
                         'numeric' => 'กรุณากรอกเป็นตัวเลข',
                     ],
                 ],
-                'email' => [
-                    'rules' => 'required|valid_email',
-                    'errors' => [
-                        'required' => 'กรุณากรอกอีเมล',
-                        'valid_email' => 'อีเมลควรเป็น example@gmail,@hotmail เท่านั้น',
-                    ],
-                ],
+                // 'email' => [
+                //     'rules' => 'required|valid_email',
+                //     'errors' => [
+                //         'required' => 'กรุณากรอกอีเมล',
+                //         'valid_email' => 'อีเมลควรเป็น example@gmail,@hotmail เท่านั้น',
+                //     ],
+                // ],
             ];
             if ($this->request->getMethod() == 'put') {
                 if ($this->validate($rules)) {
                     $model = new MemberModel();
                     
                     $data = [
-                        'name' => $this->request->getVar('name'),
+                        // 'name' => $this->request->getVar('name'),
                         'age' => $this->request->getVar('age'),
-                        'email' => $this->request->getVar('email'),
+                        // 'email' => $this->request->getVar('email'),
                     ];
     
                   
