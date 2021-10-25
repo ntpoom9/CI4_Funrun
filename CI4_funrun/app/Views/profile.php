@@ -69,6 +69,7 @@ $session = session(); ?>
                             </ul>
 
                         </li> -->
+
                         <?php
                         $id_card = $session->get('id_card');
                         ?>
@@ -87,7 +88,8 @@ $session = session(); ?>
                             aria-labelledby="navbarDropdown">
                             <li> <a class="dropdown-item" href="/profile" id="profile_btn">
                                     <i class="far fa-address-card"></i>&nbsp;&nbsp;ข้อมูลผู้สมัคร</a></li>
-                            <li> <a class="dropdown-item" href="/profile" id="edit_btn">
+                            <li> <a class="dropdown-item" href="<?= base_url('/edit_profile/'.$id_card);?>"
+                                    id="edit_btn">
                                     <i class="far fa-edit"></i>&nbsp;&nbsp;แก้ไขข้อมูล</a></li>
                             <li><a class="dropdown-item" href="<?php echo base_url('/Login/logout'); ?>"
                                     id="logout_btn">

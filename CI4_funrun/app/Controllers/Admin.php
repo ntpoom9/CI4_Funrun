@@ -29,8 +29,7 @@ use App\Models\RegisModel;
             $RegisModel = new RegisModel();
             $data['list'] = $RegisModel->orderBy('ID', 'ASC')->findAll();
             $RegisModel->delete($ID);
-            
-            return view('all_list',$data);
+            return redirect()->to('all_list');
         }
 
         

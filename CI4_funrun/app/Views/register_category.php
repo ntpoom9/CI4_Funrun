@@ -78,7 +78,7 @@ $session = session(); ?>
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" aria-labelledby="navbarDropdown">
                         <li> <a class="dropdown-item" href="/profile" id="profile_btn">
                                 <i class="far fa-address-card"></i>&nbsp;&nbsp;ข้อมูลผู้สมัคร</a></li>
-                        <li> <a class="dropdown-item" href="/profile" id="edit_btn">
+                        <li> <a class="dropdown-item" href="/edit_profile" id="edit_btn">
                                 <i class="far fa-edit"></i>&nbsp;&nbsp;แก้ไขข้อมูล</a></li>
                         <li><a class="dropdown-item" href="<?php echo base_url('/Login/logout'); ?>" id="logout_btn">
                                 <i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;ออกจากระบบ</a></li>

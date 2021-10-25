@@ -42,7 +42,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="category" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             ประเภทการวิ่ง
@@ -62,7 +62,7 @@
                             </li>
                             <li><a class="dropdown-item" href="category">Super VIP</a></li>
                         </ul>
-                    </li>
+                    </li> -->
                 </ul>
 
                 <!-- <a class="nav-link" href="/register" id="navbarRight">ลงทะเบียนงานวิ่ง</a> -->

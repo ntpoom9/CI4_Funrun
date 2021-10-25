@@ -54,6 +54,10 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="all_member" id="navbarRight">ผู้ลงสมัคร</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="all_list"
+                            id="navbarRight">รายการลงสมัคร</a>
+                    </li>
                 </ul>
 
                 <!-- <a class="nav-link" href="/register" id="navbarRight">ลงทะเบียนงานวิ่ง</a> -->

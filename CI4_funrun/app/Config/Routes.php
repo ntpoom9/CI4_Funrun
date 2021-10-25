@@ -34,19 +34,19 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 
 // Login
-$routes->get('login','Login::index');
-$routes->get('/','Login::logout');
+// $routes->get('login','Login::index');
+// $routes->get('/','Login::logout');
 // Register
 // $routes->get('register','Register::index');
 
 // page_search
- $routes->get('search_page_index', 'Search::search');
- $routes->get('search_page', 'Search::searchHome');
+//  $routes->get('search_page_index', 'Search::search');
+//  $routes->get('search_page', 'Search::searchHome');
 
 // page_profile
-$routes->get('profile', 'Profile::index');
+// $routes->get('profile', 'Profile::index');
 // page_edit_profile
- $routes->get('edit_profile/(:num)', 'Profile::show_edit/$1');
+//  $routes->get('edit_profile/(:num)', 'Profile::show_edit/$1');
 // udate profile
  $routes->put('update/(:num)', 'Profile::update/$1');
  
@@ -69,8 +69,10 @@ $routes->post('/register_category/(:num)', 'Register::regisOnlyCategory');
 $routes->get('/category', 'Category::index');
 
 // profile
-$routes->get('profile', 'Profile::index');
-
+$routes->get('/profile', 'Profile::index');
+$routes->get('edit_profile/(:num)', 'Profile::show_edit/$1');
+// udate profile
+ $routes->put('update/(:num)', 'Profile::update/$1');
 // -------------------------------------------------------------------
 
 // Admin 
