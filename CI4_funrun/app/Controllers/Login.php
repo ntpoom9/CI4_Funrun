@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\MemberModel;
-
+use App\Models\CategoryModel;
 class Login extends Controller
 {
     public function index()
@@ -35,6 +35,7 @@ class Login extends Controller
         $email = $this->request->getVar('email');
         $password = $this->request->getVar('password');
         $data = $model->where('email', $email)->first();
+        
         if ($data) {
             $pass = $data['password'];
             $verify_password = password_verify($password, $pass);
@@ -44,6 +45,8 @@ class Login extends Controller
                     'name' => $data['name'],
                     'age' => $data['age'],
                     'email' => $data['email'],
+
+
 
                     'logged_in' => TRUE
                 ];

@@ -51,15 +51,37 @@ $routes->get('profile', 'Profile::index');
  $routes->put('update/(:num)', 'Profile::update/$1');
  
  
-// funrun 
-// index user & admin
+
+
+
+// Member
 $routes->get('/index_user', 'Home::index_user');
+// Login & logout
+$routes->get('login','Login::index');
+$routes->get('/','Login::logout');
+
+// register member & category
+$routes->get('/register', 'Register::index');
+
+//category
+$routes->get('/category', 'Category::index');
+// $routes->get('register_category/(:num)', 'Category::show_page/$1');
+
+
+// profile
+$routes->get('profile', 'Profile::index');
+
+
+// Admin 
 $routes->get('/index_admin', 'Home::index_admin');
 
-// register 
-$routes->get('/register_run', 'Register::index');
-// $routes->post('/register_run', 'Register_run::add');
+// Login & logout
+$routes->get('login','Login_admin::index');
+$routes->get('/','Login_admin::logout');
 
+//all data
+$routes->get('all_member', 'Search::index');
+$routes->get('all_list', 'Search::allList');
 
 /*
  * --------------------------------------------------------------------

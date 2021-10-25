@@ -6,8 +6,9 @@ class RegisModel extends Model {
     protected $table = 'regis';
     protected $primaryKey = 'ID';
     protected $allowedFields = [
+       'ID', 
        'member',
-       'category',
+       'category_run',
         ];
 }
 ?>

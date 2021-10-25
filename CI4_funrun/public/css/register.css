@@ -7,7 +7,7 @@
     background-color: #15172b;
     border-radius: 20px;
     box-sizing: border-box;
-    height: 700px;
+    height: 1000px;
     padding: 20px;
     width: 400px;
     margin-left: auto;
@@ -120,8 +120,11 @@
     text-align: center;
     width: 100%;
   }
-  
+  .submit{
+    margin-top: 3rem;
+  }
   .submit:active {
+   
     background-color: #06b;
   }
   
@@ -133,6 +136,9 @@
       color: red;
   }
 
+  table{
+    color: #ffffff;
+  }
   .btn_register{
       display: inline;
   }

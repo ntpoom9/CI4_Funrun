@@ -43,7 +43,7 @@
 
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="main_index">FUNRUN</a>
+            <a class="navbar-brand" href="home">FUNRUN</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -52,29 +52,29 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        <a class="nav-link dropdown-toggle" href="category" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             ประเภทการวิ่ง
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">FUN RUN</a></li>
+                            <li><a class="dropdown-item" href="category">FUN RUN</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">MINI MARATHON</a></li>
+                            <li><a class="dropdown-item" href="category">MINI MARATHON</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">VIP</a></li>
+                            <li><a class="dropdown-item" href="category">VIP</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Super VIP</a></li>
+                            <li><a class="dropdown-item" href="category">Super VIP</a></li>
                         </ul>
                     </li>
                 </ul>
 
-                <a class="nav-link" href="/register" id="navbarRight">ลงทะเบียนงานวิ่ง</a>
+                <a class="nav-link" href="/register" id="navbarRight">ลงทะเบียนสมาชิก</a>
                 <a class="nav-link" href="/login" id="navbarRight">เข้าสู่ระบบ</a>
 
             </div>

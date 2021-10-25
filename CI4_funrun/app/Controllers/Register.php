@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\MemberModel;
+use App\Models\CategoryModel;
+use App\Models\RegisModel;
 
 // use App\Models\CategoryModel;
 // use App\Models\RegisModel;
@@ -13,12 +15,20 @@ class Register extends Controller{
 
     public function __construct()
     {
+        $CategoryModel = new CategoryModel();
+
+        // โชว์ All จาก id 
+        $category['category'] = $CategoryModel->orderBy('category_id', 'ASC')->findAll();
+
         helper("form");
+        return view('register',$category);
+        
     }
 
     public function index()
     {
         $data = [];
+        $data_regis = [];
         $rules = [
             'id_card' => [
                 'rules' => 'required|is_unique[member.id_card]|min_length[13]|max_length[13]|numeric',
@@ -59,12 +69,32 @@ class Register extends Controller{
                     'min_length' => 'รหัสผ่านต้องมากว่า 6 ตัว',
 
                 ],
-            ]
+            ],
+
+            // regis 
+            'category_run' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'กรุณาเลือกกิจกรรม',
+                ],
+            ],
+            'ID' => [
+                'rules' => 'required|is_unique[regis.ID]|min_length[10]|max_length[10]',
+                'errors' => [
+                    'required' => 'กรุณากรอกหมายเลขผู้สมัคร',
+                    'is_unique' => 'หมายเลขนี้ถูกใช้งานแล้ว',
+                    'min_length' => 'กรุณากรอก RUN ตามด้วย ตัวเลข 7 หลัก',
+                    'max_length' => 'กรุณากรอก RUN ตามด้วย ตัวเลข 7 หลัก',
+                ],
+            ],
         ];
 
         if ($this->request->getMethod() == 'post') {
             if ($this->validate($rules)) {
                 $model = new MemberModel();
+                
+                $model_regis = new RegisModel();
+                
                 $data = [
                     'id_card' => $this->request->getVar('id_card'),
                     'name' => $this->request->getVar('name'),
@@ -73,7 +103,14 @@ class Register extends Controller{
                     'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
                 ];
 
+                $data_regis = [
+                    'ID' => $this->request->getVar('ID'),
+                    // 'ID' => getAutoNumber('regis','ID','RUN',8),
+                    'member' => $this->request->getVar('id_card'),
+                    'category_run' => $this->request->getVar('category_run'),
+                ];
                 $model->insert($data);
+                $model_regis->insert($data_regis);
                 // echo "seve";
                    return redirect()->to('/index_user');
             } else {
@@ -82,82 +119,7 @@ class Register extends Controller{
         }
         return view('register',$data);
     }
-        // return view('register_run');
+
     }
 
-    // public function add(){
-    //     $model = new MemberModel();
-    //                 $data = [
-    //                     'id_card' => $this->request->getVar('id_card'),
-    //                     'name' => $this->request->getVar('name'),
-    //                     'age' => $this->request->getVar('age'),
-    //                     'email' => $this->request->getVar('email'),
-    //                     'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
-    //                 ];
-    //     $model->insert($data);
-    //     return $this->response->redirect(site_url('/index_user'));
-    //             }
-           
-    //     $data = [];
-    //     $rules = [
-    //         'id_card' => [
-    //             'rules' => 'required|is_unique[member.id_card]|min_length[13]|max_length[13]|numeric',
-    //             'errors' => [
-    //                 'required' => 'กรุณากรอกเลขบัตรประชาชน',
-    //                 'is_unique' => 'เลขบัตรประชาชนถูกใช้งานแล้ว',
-    //                 'numeric' => 'กรุณากรอกเป็นตัวเลข',
-    //                 'min_length' => 'กรุณากรอกเลขบัตรประชาชน 13 หลัก',
-    //                 'max_length' => 'กรุณากรอกเลขบัตรประชาชน 13 หลัก',
-    //             ],
-    //         ],
-    //         'name' => [
-    //             'rules' => 'required',
-    //             'errors' => [
-    //                 'required' => '*ชื่อ',
-    //             ],
-    //         ],
-    //         'name' => [
-    //             'rules' => 'required|numeric',
-    //             'errors' => [
-    //                 'required' => '*อายุ',
-    //                 'numeric' => 'กรุณากรอกเป็นตัวเลข',
-    //             ],
-    //         ],
-    //         'email' => [
-    //             'rules' => 'required|is_unique[member.id_card]',
-    //             'errors' => [
-    //                 'required' => 'กรุณากรอกอีเมล',
-    //                 'is_unique' => 'อีเมลถูกใช้งานแล้ว',
-    //             ],
-    //         ],
-    //         'password' => [
-    //             'rules' => 'required|min_length[6]',
-    //             'errors' => [
-    //                 'required' => 'กรุณากรอกรหัสผ่าน',
-    //                 'min_length' => 'รหัสผ่านต้องมากว่า 6 ตัว',
-
-    //             ],
-    //         ]
-    //     ];
-
-    //     if ($this->request->getMethod() == 'post') {
-    //         if ($this->validate($rules)) {
-    //             $model = new MemberModel();
-    //             $data = [
-    //                 'id_card' => $this->request->getVar('id_card'),
-    //                 'name' => $this->request->getVar('name'),
-    //                 'age' => $this->request->getVar('age'),
-    //                 'email' => $this->request->getVar('email'),
-    //                 'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
-    //             ];
-
-    //             $model->insert($data);
-    //             // echo "seve";
-    //                return redirect()->to('/index_user');
-    //         } else {
-    //             $data['validation'] = $this->validator;
-    //         }
-    //     }
-    //     return view('register_run');
-    // }
-// } 
+  

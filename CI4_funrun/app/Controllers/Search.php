@@ -1,27 +1,28 @@
 <?php  namespace App\Controllers;
 
 use CodeIgniter\Controller;
-use App\Models\UserModel;
+use App\Models\MemberModel;
+use App\Models\RegisModel;
 
     class Search extends Controller{
-        public function search() {
+        public function index() {
            
-            $UserModel = new UserModel();
+            $MemberModel = new MemberModel();
     
             // โชว์ All จาก id 
-            $data['users'] = $UserModel->orderBy('stu_id', 'DESC')->findAll();
-            // $data['users'] = $UserModel->fetch_data();
-            return view('search_page_index', $data);
+            $data['member'] = $MemberModel->orderBy('id_card', 'ASC')->findAll();
+            // $data['users'] = $MemberModel->fetch_data();
+            return view('all_member', $data);
         }
         
-        public function searchHome() {
+        public function allList() {
            
-            $UserModel = new UserModel();
+            $RegisModel = new RegisModel();
     
             // โชว์ All จาก id 
-            $data['users'] = $UserModel->orderBy('stu_id', 'DESC')->findAll();
-            // $data['users'] = $UserModel->fetch_data();
-            return view('search_page', $data);
+            $data['list'] = $RegisModel->orderBy('ID', 'ASC')->findAll();
+            // $data['users'] = $RegisModel->fetch_data();
+            return view('all_list', $data);
         }
 
         

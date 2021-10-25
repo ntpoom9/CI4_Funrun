@@ -76,7 +76,7 @@ INSERT INTO `member` (`id_card`, `name`, `age`, `email`, `password`) VALUES
 --
 
 CREATE TABLE `regis` (
-  `ID` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `ID` varchar(10)  CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `member` varchar(13) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `category_run` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

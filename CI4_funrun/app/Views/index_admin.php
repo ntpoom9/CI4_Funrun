@@ -43,7 +43,7 @@
 
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="main_index">FUNRUN</a>
+            <a class="navbar-brand" href="index_admin">FUNRUN</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -52,12 +52,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#" id="navbarRight">ข้อมูลผู้ลงสมัคร</a>
+                        <a class="nav-link active" aria-current="page" href="all_member" id="navbarRight">ผู้ลงสมัคร</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="all_list"
+                            id="navbarRight">รายการลงสมัคร</a>
                     </li>
                 </ul>
 
-                <!-- <a class="nav-link" href="/register" id="navbarRight">ลงทะเบียนงานวิ่ง</a>
-                <a class="nav-link" href="/login" id="navbarRight">เข้าสู่ระบบ</a> -->
+                <!-- <a class="nav-link" href="/register" id="navbarRight">ลงทะเบียนงานวิ่ง</a> -->
+                <a class="nav-link" href="<?php echo base_url('/Login_admin/logout'); ?>">ออกจากระบบ</a>
 
             </div>
         </div>

@@ -27,7 +27,7 @@ $session = session(); ?>
     <link rel="shortcut icon" type="image/x-icon" href="img/Funrun.png" />
     <!-- css header  -->
     <link rel="stylesheet" href="/css/header.css">
-    <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="/css/profile.css">
 
 
     <title>ลงทะเบียนสมาชิก</title>
@@ -48,24 +48,24 @@ $session = session(); ?>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            <a class="nav-link dropdown-toggle" href="category" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 ประเภทการวิ่ง
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">FUN RUN</a></li>
+                                <li><a class="dropdown-item" href="category">FUN RUN</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#">MINI MARATHON</a></li>
+                                <li><a class="dropdown-item" href="category">MINI MARATHON</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#">VIP</a></li>
+                                <li><a class="dropdown-item" href="category">VIP</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#">Super VIP</a></li>
+                                <li><a class="dropdown-item" href="category">Super VIP</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -79,8 +79,10 @@ $session = session(); ?>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start"
                             aria-labelledby="navbarDropdown">
-                            <li> <a class="dropdown-item" href="/profile">
-                                    <i class="far fa-address-card"></i>&nbsp;&nbsp;ข้อมูลส่วนตัว</a></li>
+                            <li> <a class="dropdown-item" href="/profile" id="profile_btn">
+                                    <i class="far fa-address-card"></i>&nbsp;&nbsp;ข้อมูลผู้สมัคร</a></li>
+                            <li> <a class="dropdown-item" href="/profile" id="edit_btn">
+                                    <i class="far fa-edit"></i>&nbsp;&nbsp;แก้ไขข้อมูล</a></li>
                             <li><a class="dropdown-item" href="<?php echo base_url('/Login/logout'); ?>"
                                     id="logout_btn">
                                     <i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;ออกจากระบบ</a></li>
@@ -93,23 +95,40 @@ $session = session(); ?>
 
         <!-- header  -->
 
-        <h1>Profile</h1>
+        <!-- content  -->
+        <div class="container">
+            <div class="content">
+                <h1>ข้อมูลผู้สมัคร</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ชื่อ : &nbsp;</th>
+                            <th><?php echo $session->get('name'); ?></th>
+                        </tr>
+                        <tr>
+                            <th>อายุ : &nbsp;</th>
+                            <th><?php echo $session->get('age'); ?></th>
+                        </tr>
+                        <tr>
+                            <th>บัตรประชาชน : &nbsp;</th>
+                            <th><?php echo $session->get('id_card'); ?></th>
+                        </tr>
+                        <tr>
+                            <th>email : &nbsp;</th>
+                            <th><?php echo $session->get('email'); ?></th>
+                        </tr>
 
+                    </thead>
+                </table><br>
+                <h1>กิจกรรมที่ลงสมัคร</h1>
 
-
-        <!-- footer  -->
-        <footer class="bg-dark text-center text-lg-start">
-            <!-- Copyright -->
-            <div class="text-center p-3">
-                © 2021 Copyright :
-                <a class="text" href="#" id="footer_link">Funrun.com&nbsp;&nbsp;</a>
-                <a class="text" href="https://www.facebook.com/" id="footer_link"><i
-                        class="fab fa-facebook-square"></i>&nbsp;&nbsp;</a>
-                <a class="text" href="#" id="footer_link">012-3456789</a>
             </div>
-            <!-- Copyright -->
-        </footer>
-        <!-- footer  -->
+            <div class="flap"></div>
+        </div>
+
+        <!-- content  -->
+
+
 </body>
 
 </html>

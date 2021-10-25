@@ -76,7 +76,7 @@
                 </ul>
 
                 <a class="nav-link" href="/index_user" id="navbarRight">บุคคลทั่วไป</a>
-                <a class="nav-link" href="/index_admin" id="navbarRight">เจ้าหน้าที่</a>
+                <a class="nav-link" href="/login_admin" id="navbarRight">เจ้าหน้าที่</a>
 
             </div>
         </div>
