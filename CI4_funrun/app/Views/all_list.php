@@ -100,6 +100,16 @@
                                     <td><?php echo $row['member']; ?></td>
                                     <td><?php echo $row['category_run']; ?></td>
 
+                                    <td>
+                                        <!-- <form action="</?= base_url('/delete-method/'.$row['ID']);?>" method="POST">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <button type="submit" class="btn btn-danger">ลบรายการ</button>
+                                        </form> -->
+                                        <a class="btn btn-danger"
+                                            href="<?= base_url('/delete_list/'.$row['ID']);?>">ลบรายการ</a>
+
+                                    </td>
+
                                 </tr>
                                 <?php endforeach; ?>
                                 <?php endif; ?>

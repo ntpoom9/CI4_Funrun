@@ -75,7 +75,15 @@ h3 {
 .container:hover .flap::before{
   transform: translatex(-300px);
 }
-
+#navbarDropdown{
+  color: #ffffff;
+  width: auto;
+  border-radius: 5px;
+}
+#navbarDropdown:hover{
+  color: #000000;
+  background-color: #ffae00;
+}
 #profile_btn:hover{
   background-color: #00ff04;
   }

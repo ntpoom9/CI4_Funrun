@@ -52,8 +52,6 @@ $routes->get('profile', 'Profile::index');
  
  
 
-
-
 // Member
 $routes->get('/index_user', 'Home::index_user');
 // Login & logout
@@ -63,14 +61,17 @@ $routes->get('/','Login::logout');
 // register member & category
 $routes->get('/register', 'Register::index');
 
+// member register category only
+
+$routes->get('/register_category/(:num)', 'Register::showRegisCategory/$1');
+$routes->post('/register_category/(:num)', 'Register::regisOnlyCategory');
 //category
 $routes->get('/category', 'Category::index');
-// $routes->get('register_category/(:num)', 'Category::show_page/$1');
-
 
 // profile
 $routes->get('profile', 'Profile::index');
 
+// -------------------------------------------------------------------
 
 // Admin 
 $routes->get('/index_admin', 'Home::index_admin');
@@ -80,8 +81,11 @@ $routes->get('login','Login_admin::index');
 $routes->get('/','Login_admin::logout');
 
 //all data
-$routes->get('all_member', 'Search::index');
-$routes->get('all_list', 'Search::allList');
+$routes->get('all_member', 'Admin::index');
+$routes->get('all_list', 'Admin::allList');
+
+//delete data
+$routes->get('delete_list/(:any)', 'Admin::deleteList/$1');
 
 /*
  * --------------------------------------------------------------------

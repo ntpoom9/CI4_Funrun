@@ -7,9 +7,6 @@ use App\Models\MemberModel;
 use App\Models\CategoryModel;
 use App\Models\RegisModel;
 
-// use App\Models\CategoryModel;
-// use App\Models\RegisModel;
-
 
 class Register extends Controller{
 
@@ -41,10 +38,10 @@ class Register extends Controller{
                 ],
             ],
             'name' => [
-                'rules' => 'required|alpha',
+                'rules' => 'required|alpha_space',
                 'errors' => [
                     'required' => '*ชื่อ-นามสกุล',
-                    'alpha' => 'ชื่อ-นามสกุล ต้องเป็นตัวอักษร',
+                    'alpha_space' => 'ชื่อ-นามสกุล ต้องเป็นตัวอักษร',
                 ],
             ],
             'age' => [
@@ -82,7 +79,7 @@ class Register extends Controller{
                 'rules' => 'required|is_unique[regis.ID]|min_length[10]|max_length[10]',
                 'errors' => [
                     'required' => 'กรุณากรอกหมายเลขผู้สมัคร',
-                    'is_unique' => 'หมายเลขนี้ถูกใช้งานแล้ว',
+                    'is_unique' => 'หมายเลขผู้สมัครนี้ถูกใช้งานแล้ว',
                     'min_length' => 'กรุณากรอก RUN ตามด้วย ตัวเลข 7 หลัก',
                     'max_length' => 'กรุณากรอก RUN ตามด้วย ตัวเลข 7 หลัก',
                 ],
@@ -112,7 +109,7 @@ class Register extends Controller{
                 $model->insert($data);
                 $model_regis->insert($data_regis);
                 // echo "seve";
-                   return redirect()->to('/index_user');
+                   return redirect()->to('/login');
             } else {
                 $data['validation'] = $this->validator;
             }
@@ -120,6 +117,60 @@ class Register extends Controller{
         return view('register',$data);
     }
 
+    public function showRegisCategory($id_card=null)
+    {
+        $MemberModel = new MemberModel();
+
+        // โชว์ All จาก id 
+        $data['member'] = $MemberModel->where('id_card', $id_card)->first();
+
+        helper("form");
+        return view('register_category',$data);
+    }
+
+    public function regisOnlyCategory(){
+        helper("form");
+        $data =[];
+        $rules =[
+            'category_run' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'กรุณาเลือกกิจกรรม',
+                ],
+            ],
+            'ID' => [
+                'rules' => 'required|is_unique[regis.ID]|min_length[10]|max_length[10]',
+                'errors' => [
+                    'required' => 'กรุณากรอกหมายเลขผู้สมัคร',
+                    'is_unique' => 'หมายเลขผู้สมัครนี้ถูกใช้งานแล้ว',
+                    'min_length' => 'กรุณากรอก RUN ตามด้วย ตัวเลข 7 หลัก',
+                    'max_length' => 'กรุณากรอก RUN ตามด้วย ตัวเลข 7 หลัก',
+                ],
+            ],
+        ];
+
+        if ($this->request->getMethod() == 'post') {
+            if ($this->validate($rules)) {
+                $session = session();
+                $model = new RegisModel();
+
+                $data = [
+                    'ID' => $this->request->getVar('ID'),
+                    // 'ID' => getAutoNumber('regis','ID','RUN',8),
+                    'member' => $this->request->getVar('member'),
+                    'category_run' => $this->request->getVar('category_run'),
+                ];
+                $model->insert($data);
+                $session->set($data);
+                return redirect()->to('/profile');
+            } else {
+                $data['validation'] = $this->validator;
+            }
+        }
+        return view('register_category',$data);
+    }
+    
+    
     }
 
   

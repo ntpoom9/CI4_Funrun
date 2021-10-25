@@ -47,7 +47,7 @@ $session = session(); ?>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown">
+                        <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="category" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 ประเภทการวิ่ง
@@ -67,11 +67,17 @@ $session = session(); ?>
                                 </li>
                                 <li><a class="dropdown-item" href="category">Super VIP</a></li>
                             </ul>
-                        </li>
+
+                        </li> -->
+                        <?php
+                        $id_card = $session->get('id_card');
+                        ?>
+                        <a class="nav-link" href="<?= base_url('/register_category/'.$id_card);?>"
+                            id="navbarRight">สมัครกิจกรรม</a>
                     </ul>
 
                     <div class="btn-group">
-                        <a class="nav-link dropdown-toggle" href="/search_page_index" id="navbarDropdown" role="button"
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
 
                             &nbsp;&nbsp;<?php echo $session->get('name'); ?>&nbsp;&nbsp;

@@ -182,7 +182,7 @@
             <div class="input-container ic3">
                 <label for="firstname">หมายเลขผู้สมัคร</label>
                 <input class="input" type="ID" name="ID" id="ID" value="<?= set_value('ID'); ?>"
-                    placeholder="เช่น RUN001">
+                    placeholder="RUN+ตัวเลข7หลัก เช่น RUN0000001">
                 <small id="error"><?php  if (isset($validation)) : ?>
                     <?php if($validation->hasError('ID')): ?>
                     <?= $validation->getError('ID'); ?>

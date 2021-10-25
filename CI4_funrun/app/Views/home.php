@@ -29,19 +29,6 @@
 
 <body>
 
-    <!-- <nav class="navbar">
-        <div class="container-fluid">
-
-            <a class="navbar-brand" href="#">
-                <div class="row" id="logo_funrun">
-                    <h2 id="logo_text"><img src="img/Funrun.gif" alt="" width="30" height="24" class="logo"> Funrun</h2>
-                </div>
-            </a>
-
-        </div>
-    </nav> -->
-    <!-- header  -->
-
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="home">FUNRUN</a>

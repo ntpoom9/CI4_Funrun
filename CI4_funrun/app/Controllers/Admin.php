@@ -4,7 +4,7 @@ use CodeIgniter\Controller;
 use App\Models\MemberModel;
 use App\Models\RegisModel;
 
-    class Search extends Controller{
+    class Admin extends Controller{
         public function index() {
            
             $MemberModel = new MemberModel();
@@ -23,6 +23,14 @@ use App\Models\RegisModel;
             $data['list'] = $RegisModel->orderBy('ID', 'ASC')->findAll();
             // $data['users'] = $RegisModel->fetch_data();
             return view('all_list', $data);
+        }
+
+        public function deleteList($ID=null){
+            $RegisModel = new RegisModel();
+            $data['list'] = $RegisModel->orderBy('ID', 'ASC')->findAll();
+            $RegisModel->delete($ID);
+            
+            return view('all_list',$data);
         }
 
         
