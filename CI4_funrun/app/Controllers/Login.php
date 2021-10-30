@@ -45,9 +45,6 @@ class Login extends Controller
                     'name' => $data['name'],
                     'age' => $data['age'],
                     'email' => $data['email'],
-
-
-
                     'logged_in' => TRUE
                 ];
                 $session->set($ses_data);

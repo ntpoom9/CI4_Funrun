@@ -89,7 +89,6 @@ class Register extends Controller{
         if ($this->request->getMethod() == 'post') {
             if ($this->validate($rules)) {
                 $model = new MemberModel();
-                
                 $model_regis = new RegisModel();
                 
                 $data = [
@@ -106,8 +105,10 @@ class Register extends Controller{
                     'member' => $this->request->getVar('id_card'),
                     'category_run' => $this->request->getVar('category_run'),
                 ];
+
                 $model->insert($data);
                 $model_regis->insert($data_regis);
+                
                 // echo "seve";
                    return redirect()->to('/login');
             } else {

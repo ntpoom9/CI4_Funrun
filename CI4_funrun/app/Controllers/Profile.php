@@ -24,7 +24,7 @@ class Profile extends Controller{
             // $data['member'] = $MemberModel->orderBy('id_card', $id_card)->findAll();
             $data['member'] = $MemberModel->where('id_card', $id_card)->first();
     
-            helper("foem");
+            helper("form");
 
             return view('edit_profile', $data);
         }

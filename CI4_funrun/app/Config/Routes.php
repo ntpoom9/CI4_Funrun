@@ -33,25 +33,6 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
-// Login
-// $routes->get('login','Login::index');
-// $routes->get('/','Login::logout');
-// Register
-// $routes->get('register','Register::index');
-
-// page_search
-//  $routes->get('search_page_index', 'Search::search');
-//  $routes->get('search_page', 'Search::searchHome');
-
-// page_profile
-// $routes->get('profile', 'Profile::index');
-// page_edit_profile
-//  $routes->get('edit_profile/(:num)', 'Profile::show_edit/$1');
-// udate profile
- $routes->put('update/(:num)', 'Profile::update/$1');
- 
- 
-
 // Member
 $routes->get('/index_user', 'Home::index_user');
 // Login & logout
@@ -65,15 +46,20 @@ $routes->get('/register', 'Register::index');
 
 $routes->get('/register_category/(:num)', 'Register::showRegisCategory/$1');
 $routes->post('/register_category/(:num)', 'Register::regisOnlyCategory');
+
 //category
 $routes->get('/category', 'Category::index');
 
 // profile
 $routes->get('/profile', 'Profile::index');
 $routes->get('edit_profile/(:num)', 'Profile::show_edit/$1');
-// udate profile
+
+// update profile
  $routes->put('update/(:num)', 'Profile::update/$1');
+
 // -------------------------------------------------------------------
+
+
 
 // Admin 
 $routes->get('/index_admin', 'Home::index_admin');

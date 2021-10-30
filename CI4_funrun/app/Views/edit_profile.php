@@ -33,11 +33,10 @@ $session = session(); ?>
 
 <body>
 
-    <!-- header  -->
-
+    <!-- Header  -->
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/profile">FUNRUN</a>
+            <a class="navbar-brand" href="index_user">FUNRUN</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -46,30 +45,37 @@ $session = session(); ?>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="category" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            ประเภทการวิ่ง
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="category">FUN RUN</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="category">MINI MARATHON</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="category">VIP</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="category">Super VIP</a></li>
-                        </ul>
-                    </li> -->
+                            <a class="nav-link dropdown-toggle" href="category" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                ประเภทการวิ่ง
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="category">FUN RUN</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="category">MINI MARATHON</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="category">VIP</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="category">Super VIP</a></li>
+                            </ul>
+
+                        </li> -->
+
+                    <?php
+                        $id_card = $session->get('id_card');
+                        ?>
+                    <a class="nav-link" href="<?= base_url('/register_category/'.$id_card);?>"
+                        id="navbarRight">สมัครกิจกรรม</a>
                 </ul>
 
                 <div class="btn-group">
-                    <a class="nav-link dropdown-toggle" href="/search_page_index" id="navbarDropdown" role="button"
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
 
                         &nbsp;&nbsp;<?php echo $session->get('name'); ?>&nbsp;&nbsp;
@@ -78,7 +84,7 @@ $session = session(); ?>
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" aria-labelledby="navbarDropdown">
                         <li> <a class="dropdown-item" href="/profile" id="profile_btn">
                                 <i class="far fa-address-card"></i>&nbsp;&nbsp;ข้อมูลผู้สมัคร</a></li>
-                        <li> <a class="dropdown-item" href="/edit_profile" id="edit_btn">
+                        <li> <a class="dropdown-item" href="<?= base_url('/edit_profile/'.$id_card);?>" id="edit_btn">
                                 <i class="far fa-edit"></i>&nbsp;&nbsp;แก้ไขข้อมูล</a></li>
                         <li><a class="dropdown-item" href="<?php echo base_url('/Login/logout'); ?>" id="logout_btn">
                                 <i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;ออกจากระบบ</a></li>

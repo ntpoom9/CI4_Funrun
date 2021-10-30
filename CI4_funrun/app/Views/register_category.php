@@ -106,8 +106,7 @@ $session = session(); ?>
 
             <div class="input-container ic1">
                 <label for="firstname">เลขบัตรประชาชน</label>
-                <input class="input" type="text" name="member" id="member" value="<?= $session->get('id_card'); ?>"
-                    disabled>
+                <input class="input" type="text" name="member" id="member" value="<?= $session->get('id_card'); ?>">
 
 
             </div>

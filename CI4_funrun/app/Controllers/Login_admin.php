@@ -34,6 +34,7 @@ class Login_admin extends Controller
         // $model = new AdminModel();
         $email = $this->request->getVar('email');
         $password = $this->request->getVar('password');
+        
         $email2 ="admin@gmail.com"; 
         $pass = 123456;
         
@@ -44,6 +45,7 @@ class Login_admin extends Controller
             return redirect()->to('/login_admin');
         }
     }
+
 
     public function logout()
     {
